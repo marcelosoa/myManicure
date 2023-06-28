@@ -1,4 +1,5 @@
 import React from 'react';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { View, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 import FormGroupComponent from '../../components/FormGroup';
 import ButtonComponent from '../../utils/Button';
