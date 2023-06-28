@@ -1,4 +1,5 @@
-import { TouchableOpacity, Text, StyleProp, ViewStyle, StyleSheet } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, Text, StyleProp, ViewStyle, StyleSheet, KeyboardAvoidingView } from 'react-native';
 
 interface ButtonProps {
   label: string
@@ -8,27 +9,35 @@ interface ButtonProps {
 
 export default function ButtonComponent({ label, onPress, style }: ButtonProps) {
   return (
-    <TouchableOpacity
-      style={styled.touchable}
-      onPress={onPress}
-    >
-      <Text style={styled.text}>{label}</Text>
-    </TouchableOpacity>
+    <KeyboardAvoidingView style={styled.container}>
+      <TouchableOpacity
+        style={styled.button}
+        onPress={onPress}
+      >
+        <Text style={styled.text}>{label}</Text>
+      </TouchableOpacity>
+    </KeyboardAvoidingView>
   );
 }
 
 const styled = StyleSheet.create({
-  touchable: {
-    width: '60%',
-    backgroundColor: '#92C3B1',
-    height: 60,
-    borderRadius: 15,
+  container: {
     display: 'flex',
-    alignItems: 'center',
     alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    paddingTop: 15,
+    backgroundColor: '#92C3B1',
+    width: '60%',
+    height: 57,
+    borderRadius: 15,
   },
   text: {
     textAlign: 'center',
     alignItems: 'center',
+    alignContent: 'center',
+    color: '#fff',
   },
 });

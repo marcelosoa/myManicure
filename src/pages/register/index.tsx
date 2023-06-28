@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Image, KeyboardAvoidingView } from 'react-native';
 import FormGroupComponent from '../../components/FormGroup';
 import ButtonComponent from '../../utils/Button';
 
 export default function RegisterScreen() {
   return (
-    <View style={styled.container}>
+    <KeyboardAvoidingView style={styled.container}>
       <View style={styled.contenForm}>
         <FormGroupComponent placeholder="Nome Completo"/>
         <FormGroupComponent placeholder="Email"/>
@@ -13,17 +13,19 @@ export default function RegisterScreen() {
         <FormGroupComponent placeholder="Confirmar Senha"/>
       </View>
       <ButtonComponent label="Criar Conta"/>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
 const styled = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative',
+    width: '100%',
     backgroundColor: '#EFF5F6',
   },
   contenForm: {
+    alignContent: 'center',
+    justifyContent: 'center',
     paddingTop: 130,
     borderColor: 'white',
   },
