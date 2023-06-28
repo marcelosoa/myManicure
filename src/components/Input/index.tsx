@@ -7,7 +7,7 @@ interface InputProps {
 export default function InputComponent({placeholder}: InputProps) {
   return (
     <View style={styled.container}>
-      <TextInput style={styled.textInput} placeholder={placeholder} />
+      <TextInput style={styled.textInput} placeholder={placeholder}  placeholderTextColor='#fff'/>
     </View>
   );
 }
@@ -15,16 +15,18 @@ export default function InputComponent({placeholder}: InputProps) {
 
 const styled = StyleSheet.create({
   container: {
-    margin: 10,
-    marginTop: 10,
+    margin: 15,
+    marginTop: 25,
   },
   textInput: {
     width: '100%',
+    backgroundColor: '#92C3B1',
+    color: '#fff',
     height: 60,
-    borderRadius: 10,
-    borderColor: 'grey',
+    borderRadius: 5,
+    borderColor: 'white',
     borderWidth: 1,
-    padding: 10,
+    padding: 15,
     marginBottom: 10,
   },
 });
