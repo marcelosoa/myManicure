@@ -1,44 +1,27 @@
 import { useState } from 'react';
 import { Text, View, TextInput, StyleSheet} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { Container, InputText } from './styled';
+
 interface InputProps {
   placeholder: string,
   iconName?: React.ComponentProps<typeof FontAwesome>['name']
 }
 
-export default function InputComponent({placeholder}: InputProps) {
-
+export default function InputComponent({ placeholder }: InputProps) {
   const [isFilled, setIsFilled] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [hasError, setHasError] = useState(false);
 
-
   return (
-    <View style={styled.container}>
-      <TextInput
-      style={styled.textInput}
+    <Container>
+      <InputText
+      hasError={hasError}
+      isFilled={isFilled}
+      isFocused={isFocused}
       placeholder={placeholder}
       placeholderTextColor="#fff"
       />
-    </View>
+    </Container>
   );
 }
-
-
-const styled = StyleSheet.create({
-  container: {
-    margin: 15,
-    marginTop: 25,
-  },
-  textInput: {
-    width: '100%',
-    backgroundColor: '#92C3B1',
-    color: '#fff',
-    height: 60,
-    borderRadius: 5,
-    borderColor: 'white',
-    borderWidth: 1,
-    padding: 15,
-    marginBottom: 10,
-  },
-});
